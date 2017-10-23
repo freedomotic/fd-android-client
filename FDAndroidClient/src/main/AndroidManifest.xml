@@ -15,8 +15,7 @@
   ~ You should have received a copy of the GNU General Public License along with
   ~ Freedomotic; see the file COPYING. If not, see
   ~ <http://www.gnu.org/licenses/>.
-  -->
-
+-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.freedomotic.freedomotic">
 
@@ -29,7 +28,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".objectListActivity"
+            android:name=".SplashScreen"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,9 +46,12 @@
         </activity>
 
         <service
-            android:name="com.freedomotic.freedomotic.network.FDSpiceService"
+            android:name=".network.FDSpiceService"
             android:exported="false" />
 
+        <activity android:name=".objectListActivity">
+
+        </activity>
     </application>
 
 </manifest>
