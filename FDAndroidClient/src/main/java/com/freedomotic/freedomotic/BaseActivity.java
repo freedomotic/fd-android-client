@@ -19,13 +19,13 @@
 
 package com.freedomotic.freedomotic;
 
-import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 
 
 /**
  * Base activity to provide the common struture for all activities
  */
-public abstract class BaseActivity extends Activity {
+public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onStart() {
