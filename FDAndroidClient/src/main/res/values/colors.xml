@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright (c) 2009-2014 Freedomotic team http://freedomotic.com
+  ~ Copyright (c) 2009-2017 Freedomotic team http://freedomotic.com
   ~
   ~ This file is part of Freedomotic
   ~
@@ -18,13 +19,5 @@
   -->
 
 <resources>
-
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-    </style>
-
-    <style name="AppTheme.SplashScreen" parent="AppTheme">
-        <item name="android:windowBackground">@drawable/splash_screen</item>
-    </style>
-
+    <color name="white">#fff</color>
 </resources>
