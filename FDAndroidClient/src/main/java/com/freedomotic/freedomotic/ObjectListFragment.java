@@ -53,7 +53,7 @@ public class ObjectListFragment extends ListFragment {
      * A dummy implementation of the {@link Callbacks} interface that does
      * nothing. Used only when this fragment is not attached to an activity.
      */
-    private static Callbacks sDummyCallbacks = new Callbacks() {
+    private static Callbacks stubbedCallbacks = new Callbacks() {
         @Override
         public void onItemSelected(String id) {
         }
@@ -62,13 +62,13 @@ public class ObjectListFragment extends ListFragment {
      * The fragment's current callback object, which is notified of list item
      * clicks.
      */
-    private Callbacks mCallbacks = sDummyCallbacks;
+    private Callbacks callbacks = stubbedCallbacks;
     private final String TAG = ((Object) this).getClass().getName();
-    private final FDObject.List mFDObjectsList = new FDObject.List();
+    private final FDObject.List fdObjectsList = new FDObject.List();
     /**
      * The current activated item position. Only used on tablets.
      */
-    private int mActivatedPosition = ListView.INVALID_POSITION;
+    private int activatedPosition = ListView.INVALID_POSITION;
     private ArrayAdapter<FDObject> adapter;
 
     /**
@@ -113,7 +113,7 @@ public class ObjectListFragment extends ListFragment {
         adapter = new ArrayAdapter<FDObject>(getActivity(),
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,
-                mFDObjectsList);
+                fdObjectsList);
         setListAdapter(adapter);
     }
 
@@ -126,7 +126,7 @@ public class ObjectListFragment extends ListFragment {
             throw new IllegalStateException("Activity must implement fragment's callbacks.");
         }
 
-        mCallbacks = (Callbacks) activity;
+        callbacks = (Callbacks) activity;
     }
 
     @Override
@@ -134,7 +134,7 @@ public class ObjectListFragment extends ListFragment {
         super.onDetach();
 
         // Reset the active callbacks interface to the dummy implementation.
-        mCallbacks = sDummyCallbacks;
+        callbacks = stubbedCallbacks;
     }
 
     @Override
@@ -143,16 +143,16 @@ public class ObjectListFragment extends ListFragment {
 
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        //mCallbacks.onItemSelected(NetworkFactory.SERVICE.getObjectByPosition(position).getUuid());
-        mCallbacks.onItemSelected(((FDObject) getListAdapter().getItem(position)).getUuid());
+        //callbacks.onItemSelected(NetworkFactory.SERVICE.getObjectByPosition(position).getUuid());
+        callbacks.onItemSelected(((FDObject) getListAdapter().getItem(position)).getUuid());
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        if (mActivatedPosition != ListView.INVALID_POSITION) {
+        if (activatedPosition != ListView.INVALID_POSITION) {
             // Serialize and persist the activated item position.
-            outState.putInt(STATE_ACTIVATED_POSITION, mActivatedPosition);
+            outState.putInt(STATE_ACTIVATED_POSITION, activatedPosition);
         }
     }
 
@@ -170,18 +170,18 @@ public class ObjectListFragment extends ListFragment {
 
     private void setActivatedPosition(int position) {
         if (position == ListView.INVALID_POSITION) {
-            getListView().setItemChecked(mActivatedPosition, false);
+            getListView().setItemChecked(activatedPosition, false);
         } else {
             getListView().setItemChecked(position, true);
         }
 
-        mActivatedPosition = position;
+        activatedPosition = position;
     }
 
     public void onEvent(FDObjectChangeEvent event) {
-        int index = mFDObjectsList.indexOf(event.getFDObject());
+        int index = fdObjectsList.indexOf(event.getFDObject());
         if (index != -1)
-            mFDObjectsList.set(index, event.getFDObject());
+            fdObjectsList.set(index, event.getFDObject());
         if (adapter != null) {
             if (getActivity() != null) {
                 getActivity().runOnUiThread(new Runnable() {
@@ -198,8 +198,8 @@ public class ObjectListFragment extends ListFragment {
     //region Bus Subscriptions
 
     public void onEvent(FDObjectsLoadedEvent event) {
-        mFDObjectsList.clear();
-        mFDObjectsList.addAll(event.getFDObjectsList());
+        fdObjectsList.clear();
+        fdObjectsList.addAll(event.getFDObjectsList());
         if (adapter != null) {
             if (getActivity() != null) {
                 getActivity().runOnUiThread(new Runnable() {

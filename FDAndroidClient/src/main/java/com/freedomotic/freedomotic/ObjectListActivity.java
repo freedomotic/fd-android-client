@@ -51,7 +51,7 @@ public class ObjectListActivity extends BaseActivity
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
      */
-    private boolean mTwoPane;
+    private boolean isTwoPaneDevice;
 
 
     @Override
@@ -66,7 +66,7 @@ public class ObjectListActivity extends BaseActivity
             // large-screen layouts (res/values-large and
             // res/values-sw600dp). If this view is present, then the
             // activity should be in two-pane mode.F
-            mTwoPane = true;
+            isTwoPaneDevice = true;
 
             // In two-pane mode, list items should be given the
             // 'activated' state when touched.
@@ -95,7 +95,7 @@ public class ObjectListActivity extends BaseActivity
      */
     @Override
     public void onItemSelected(String id) {
-        if (mTwoPane) {
+        if (isTwoPaneDevice) {
             // In two-pane mode, show the detail view in this activity by
             // adding or replacing the detail fragment using a
             // fragment transaction.
