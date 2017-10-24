@@ -31,11 +31,11 @@ import com.freedomotic.freedomotic.model.FDObjectModelHelper;
 
 /**
  * A fragment representing a single object detail screen.
- * This fragment is either contained in a {@link objectListActivity}
- * in two-pane mode (on tablets) or a {@link objectDetailActivity}
+ * This fragment is either contained in a {@link ObjectListActivity}
+ * in two-pane mode (on tablets) or a {@link ObjectDetailActivity}
  * on handsets.
  */
-public class objectDetailFragment extends Fragment {
+public class ObjectDetailFragment extends Fragment {
     /**
      * The fragment argument representing the item ID that this fragment
      * represents.
@@ -51,7 +51,7 @@ public class objectDetailFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public objectDetailFragment() {
+    public ObjectDetailFragment() {
     }
 
     @Override

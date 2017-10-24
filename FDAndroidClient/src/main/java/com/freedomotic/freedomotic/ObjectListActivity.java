@@ -29,20 +29,20 @@ import com.freedomotic.freedomotic.model.FDObjectModelHelper;
  * An activity representing a list of object. This activity
  * has different presentations for handset and tablet-size devices. On
  * handsets, the activity presents a list of items, which when touched,
- * lead to a {@link objectDetailActivity} representing
+ * lead to a {@link ObjectDetailActivity} representing
  * item details. On tablets, the activity presents the list of items and
  * item details side-by-side using two vertical panes.
  * <p/>
  * The activity makes heavy use of fragments. The list of items is a
- * {@link objectListFragment} and the item details
- * (if present) is a {@link objectDetailFragment}.
+ * {@link ObjectListFragment} and the item details
+ * (if present) is a {@link ObjectDetailFragment}.
  * <p/>
  * This activity also implements the required
- * {@link objectListFragment.Callbacks} interface
+ * {@link ObjectListFragment.Callbacks} interface
  * to listen for item selections.
  */
-public class objectListActivity extends BaseActivity
-        implements objectListFragment.Callbacks {
+public class ObjectListActivity extends BaseActivity
+        implements ObjectListFragment.Callbacks {
 
 
     //protected SpiceManager spiceManager = new SpiceManager(FDSpiceService.class);
@@ -70,7 +70,7 @@ public class objectListActivity extends BaseActivity
 
             // In two-pane mode, list items should be given the
             // 'activated' state when touched.
-            ((objectListFragment) getFragmentManager()
+            ((ObjectListFragment) getFragmentManager()
                     .findFragmentById(R.id.object_list))
                     .setActivateOnItemClick(true);
         }
@@ -90,7 +90,7 @@ public class objectListActivity extends BaseActivity
     }
 
     /**
-     * Callback method from {@link objectListFragment.Callbacks}
+     * Callback method from {@link ObjectListFragment.Callbacks}
      * indicating that the item with the given ID was selected.
      */
     @Override
@@ -100,8 +100,8 @@ public class objectListActivity extends BaseActivity
             // adding or replacing the detail fragment using a
             // fragment transaction.
             Bundle arguments = new Bundle();
-            arguments.putString(objectDetailFragment.ARG_ITEM_ID, id);
-            objectDetailFragment fragment = new objectDetailFragment();
+            arguments.putString(ObjectDetailFragment.ARG_ITEM_ID, id);
+            ObjectDetailFragment fragment = new ObjectDetailFragment();
             fragment.setArguments(arguments);
             getFragmentManager().beginTransaction()
                     .replace(R.id.object_detail_container, fragment)
@@ -110,8 +110,8 @@ public class objectListActivity extends BaseActivity
         } else {
             // In single-pane mode, simply start the detail activity
             // for the selected item ID.
-            Intent detailIntent = new Intent(this, objectDetailActivity.class);
-            detailIntent.putExtra(objectDetailFragment.ARG_ITEM_ID, id);
+            Intent detailIntent = new Intent(this, ObjectDetailActivity.class);
+            detailIntent.putExtra(ObjectDetailFragment.ARG_ITEM_ID, id);
             startActivity(detailIntent);
         }
     }

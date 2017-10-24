@@ -28,12 +28,12 @@ import android.view.MenuItem;
  * An activity representing a single object detail screen. This
  * activity is only used on handset devices. On tablet-size devices,
  * item details are presented side-by-side with a list of items
- * in a {@link objectListActivity}.
+ * in a {@link ObjectListActivity}.
  * <p/>
  * This activity is mostly just a 'shell' activity containing nothing
- * more than a {@link objectDetailFragment}.
+ * more than a {@link ObjectDetailFragment}.
  */
-public class objectDetailActivity extends BaseActivity {
+public class ObjectDetailActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,9 +56,9 @@ public class objectDetailActivity extends BaseActivity {
             // Create the detail fragment and add it to the activity
             // using a fragment transaction.
             Bundle arguments = new Bundle();
-            arguments.putString(objectDetailFragment.ARG_ITEM_ID,
-                    getIntent().getStringExtra(objectDetailFragment.ARG_ITEM_ID));
-            objectDetailFragment fragment = new objectDetailFragment();
+            arguments.putString(ObjectDetailFragment.ARG_ITEM_ID,
+                    getIntent().getStringExtra(ObjectDetailFragment.ARG_ITEM_ID));
+            ObjectDetailFragment fragment = new ObjectDetailFragment();
             fragment.setArguments(arguments);
             getFragmentManager().beginTransaction()
                     .add(R.id.object_detail_container, fragment)
@@ -76,7 +76,7 @@ public class objectDetailActivity extends BaseActivity {
             //
             // http://developer.android.com/design/patterns/navigation.html#up-vs-back
             //
-            navigateUpTo(new Intent(this, objectListActivity.class));
+            navigateUpTo(new Intent(this, ObjectListActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);

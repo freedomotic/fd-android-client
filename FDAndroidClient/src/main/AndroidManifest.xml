@@ -29,7 +29,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".objectListActivity"
+            android:name=".ObjectListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.SplashScreen">
             <intent-filter>
@@ -38,12 +38,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".objectDetailActivity"
+            android:name=".ObjectDetailActivity"
             android:label="@string/title_object_detail"
-            android:parentActivityName=".objectListActivity">
+            android:parentActivityName=".ObjectListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".objectListActivity" />
+                android:value=".ObjectListActivity" />
         </activity>
 
         <service

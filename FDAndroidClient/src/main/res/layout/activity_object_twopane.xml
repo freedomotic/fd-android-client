@@ -27,7 +27,7 @@
     android:divider="?android:attr/dividerHorizontal"
     android:orientation="horizontal"
     android:showDividers="middle"
-    tools:context=".objectListActivity">
+    tools:context=".ObjectListActivity">
 
     <!--
     This layout is a two-pane layout for the object
@@ -42,7 +42,7 @@
 
     <fragment
         android:id="@+id/object_list"
-        android:name="com.freedomotic.freedomotic.objectListFragment"
+        android:name="com.freedomotic.freedomotic.ObjectListFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
