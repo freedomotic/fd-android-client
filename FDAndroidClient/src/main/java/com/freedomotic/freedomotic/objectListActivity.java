@@ -56,6 +56,8 @@ public class objectListActivity extends BaseActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Change the theme to remove the splash screen as soon this is created.
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_object_list);
 
