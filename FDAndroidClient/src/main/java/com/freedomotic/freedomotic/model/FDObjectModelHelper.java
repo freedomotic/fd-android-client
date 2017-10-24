@@ -33,9 +33,9 @@ import de.greenrobot.event.EventBus;
  */
 public class FDObjectModelHelper extends ModelHelper {
 
-    public static FDObjectModelHelper INSTANCE = null;
+    private static FDObjectModelHelper INSTANCE = null;
     ObjectsRequest objectRequest;
-    private FDObject.List mFDObjectsList;
+    private FDObject.List fbObjectsList;
 
     private FDObjectModelHelper() {
         super();
@@ -51,16 +51,16 @@ public class FDObjectModelHelper extends ModelHelper {
 
     public void onEvent(FDObjectsRequestLoad event) {
 
-        mSpiceManager.getFromCacheAndLoadFromNetworkIfExpired(objectRequest, "objects", DurationInMillis.ONE_MINUTE, new ListObjectRequestListener());
-        //mSpiceManager.execute(objectRequest, "objects", DurationInMillis.ONE_MINUTE, new ListObjectRequestListener());
+        spiceManager.getFromCacheAndLoadFromNetworkIfExpired(objectRequest, "objects", DurationInMillis.ONE_MINUTE, new ListObjectRequestListener());
+        //spiceManager.execute(objectRequest, "objects", DurationInMillis.ONE_MINUTE, new ListObjectRequestListener());
     }
 
     public FDObject.List getFDObjectsList() {
-        return mFDObjectsList;
+        return fbObjectsList;
     }
 
 
-    public final class ListObjectRequestListener implements RequestListener<FDObject.List> {
+    private final class ListObjectRequestListener implements RequestListener<FDObject.List> {
 
         @Override
         public void onRequestFailure(SpiceException spiceException) {
@@ -68,8 +68,8 @@ public class FDObjectModelHelper extends ModelHelper {
 
         @Override
         public void onRequestSuccess(final FDObject.List result) {
-            mFDObjectsList = result;
-            EventBus.getDefault().postSticky(new FDObjectsLoadedEvent(mFDObjectsList));
+            fbObjectsList = result;
+            EventBus.getDefault().postSticky(new FDObjectsLoadedEvent(fbObjectsList));
 
         }
     }

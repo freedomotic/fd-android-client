@@ -31,7 +31,7 @@ import de.greenrobot.event.EventBus;
  */
 public class ModelHelper {
 
-    protected final SpiceManager mSpiceManager = new SpiceManager(FDSpiceService.class);
+    protected final SpiceManager spiceManager = new SpiceManager(FDSpiceService.class);
 
     public ModelHelper() {
 
@@ -39,13 +39,13 @@ public class ModelHelper {
 
     public void Start(Context context) {
         EventBus.getDefault().registerSticky(this);
-        mSpiceManager.start(context);
+        spiceManager.start(context);
 
     }
 
     public void Stop() {
         EventBus.getDefault().unregister(this);
-        mSpiceManager.shouldStop();
+        spiceManager.shouldStop();
 
     }
 

@@ -45,7 +45,7 @@ public class ObjectDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-    private FDObject mObject;
+    private FDObject fdObject;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -59,7 +59,7 @@ public class ObjectDetailFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments().containsKey(ARG_ITEM_ID)) {
-            mObject = FDObjectModelHelper.getInstance().getFDObjectsList().findByUUID(getArguments().getString(ARG_ITEM_ID));
+            fdObject = FDObjectModelHelper.getInstance().getFDObjectsList().findByUUID(getArguments().getString(ARG_ITEM_ID));
         }
     }
 
@@ -69,8 +69,8 @@ public class ObjectDetailFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_object_detail, container, false);
 
         // Show the dummy content as text in a TextView.
-        if (mObject != null) {
-            ((TextView) rootView.findViewById(R.id.object_detail)).setText(mObject.getDescription());
+        if (fdObject != null) {
+            ((TextView) rootView.findViewById(R.id.object_detail)).setText(fdObject.getDescription());
         }
 
         return rootView;

@@ -25,13 +25,13 @@ import com.freedomotic.freedomotic.model.FDObject;
  * Event raised when an FDObject has changed
  */
 public class FDObjectChangeEvent {
-    private final FDObject mFDObject;
+    private final FDObject fdObject;
 
     public FDObjectChangeEvent(FDObject fdObject) {
-        mFDObject = fdObject;
+        this.fdObject = fdObject;
     }
 
     public FDObject getFDObject() {
-        return mFDObject;
+        return fdObject;
     }
 }

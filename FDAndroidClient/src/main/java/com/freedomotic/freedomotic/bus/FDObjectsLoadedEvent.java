@@ -25,14 +25,14 @@ import com.freedomotic.freedomotic.model.FDObject;
  * * Event raised when the FDObjectList has been loaded
  */
 public class FDObjectsLoadedEvent {
-    private final FDObject.List mFDObjects;
+    private final FDObject.List fdObjectsList;
 
     public FDObjectsLoadedEvent(FDObject.List fdObjects) {
-        mFDObjects = fdObjects;
+        fdObjectsList = fdObjects;
     }
 
     public FDObject.List getFDObjectsList() {
-        return mFDObjects;
+        return fdObjectsList;
     }
 
 }
