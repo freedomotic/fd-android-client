@@ -20,10 +20,10 @@
 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/object_list"
-    android:name="com.freedomotic.freedomotic.objectListFragment"
+    android:name="com.freedomotic.freedomotic.ObjectListFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
-    tools:context=".objectListActivity"
+    tools:context=".ObjectListActivity"
     tools:layout="@android:layout/list_content" />

@@ -37,12 +37,12 @@ import de.greenrobot.event.EventBus;
  * A list fragment representing a list of object. This fragment
  * also supports tablet devices by allowing list items to be given an
  * 'activated' state upon selection. This helps indicate which item is
- * currently being viewed in a {@link objectDetailFragment}.
+ * currently being viewed in a {@link ObjectDetailFragment}.
  * <p/>
  * Activities containing this fragment MUST implement the {@link Callbacks}
  * interface.
  */
-public class objectListFragment extends ListFragment {
+public class ObjectListFragment extends ListFragment {
 
     /**
      * The serialization (saved instance state) Bundle key representing the
@@ -75,7 +75,7 @@ public class objectListFragment extends ListFragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public objectListFragment() {
+    public ObjectListFragment() {
     }
 
     @Override
