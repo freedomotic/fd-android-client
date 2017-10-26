@@ -44,20 +44,20 @@ android {
 }
 
 ext.supportVersion = "26.0.2"
+ext.butterKnifeVersion = "8.8.1"
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     // You must install or update the Support Repository through the SDK manager to use this dependency.
     compile "com.android.support:appcompat-v7:$supportVersion"
     compile "com.android.support:support-v4:$supportVersion"
-
+    compile "com.jakewharton:butterknife:$butterKnifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
     compile 'com.squareup.retrofit:retrofit:1.6.1'
-
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
     compile 'com.squareup.okhttp:okhttp:2.0.0'
-
     compile 'com.octo.android.robospice:robospice:1.4.12'
     compile 'com.octo.android.robospice:robospice-retrofit:1.4.12'
     compile 'de.greenrobot:eventbus:2.2.1'
-
+    compile 'com.android.support:design:26.+'
 }
