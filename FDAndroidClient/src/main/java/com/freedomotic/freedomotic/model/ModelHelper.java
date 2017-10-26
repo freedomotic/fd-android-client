@@ -21,7 +21,7 @@ package com.freedomotic.freedomotic.model;
 
 import android.content.Context;
 
-import com.freedomotic.freedomotic.network.FDSpiceService;
+import com.freedomotic.freedomotic.network.service.FDSpiceService;
 import com.octo.android.robospice.SpiceManager;
 
 import de.greenrobot.event.EventBus;

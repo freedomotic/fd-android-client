@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009-2014 Freedomotic team http://freedomotic.com
+ * Copyright (c) 2009-2017 Freedomotic team http://freedomotic.com
  *
  * This file is part of Freedomotic
  *
@@ -17,8 +17,9 @@
  * <http://www.gnu.org/licenses/>.
  */
 
-package com.freedomotic.freedomotic.network;
+package com.freedomotic.freedomotic.network.service;
 
+import com.freedomotic.freedomotic.network.service.ObjectService;
 import com.octo.android.robospice.retrofit.RetrofitGsonSpiceService;
 
 import retrofit.RequestInterceptor;
@@ -35,7 +36,7 @@ public class FDSpiceService extends RetrofitGsonSpiceService {
     @Override
     public void onCreate() {
         super.onCreate();
-        addRetrofitInterface(IFreedomoticApi.class);
+        addRetrofitInterface(ObjectService.class);
     }
 
     @Override
@@ -47,8 +48,6 @@ public class FDSpiceService extends RetrofitGsonSpiceService {
                 request.addHeader("Authorization", "admin:admin");
             }
         };
-        //OkHttpClient okHttpClient = new OkHttpClient();
-        //okHttpClient.setSslSocketFactory(getPinnedCertSslSocketFactory(context));
 
         return new RestAdapter.Builder().setEndpoint(getServerUrl())
                 .setRequestInterceptor(requestInterceptor);
