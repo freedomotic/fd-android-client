@@ -122,7 +122,7 @@ public class FDObject {
     @SuppressWarnings("serial")
     public static class List extends ArrayList<FDObject> {
 
-        public FDObject findByUUID(String uuid) {
+        public FDObject findByUuid(String uuid) {
 
             for (FDObject fdobject : this) {
                 if (fdobject.getUuid().equals(uuid))

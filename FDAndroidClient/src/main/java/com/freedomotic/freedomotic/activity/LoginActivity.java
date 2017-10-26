@@ -22,25 +22,30 @@ package com.freedomotic.freedomotic.activity;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
-import android.support.v7.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.freedomotic.freedomotic.R;
+import com.freedomotic.freedomotic.network.manager.NetworkManager;
+import com.freedomotic.freedomotic.network.service.AuthenticationService;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
 
     @BindView(R.id.email) AutoCompleteTextView usernameTextView;
     @BindView(R.id.password) EditText passwordEditText;
@@ -62,6 +67,11 @@ public class LoginActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 
     @OnClick(R.id.email_sign_in_button)
@@ -94,6 +104,7 @@ public class LoginActivity extends AppCompatActivity {
             invalidField.requestFocus();
         } else {
             showProgress(true);
+            attemptAuthentication(usernameTextView.getText().toString(), passwordEditText.getText().toString());
         }
     }
 
@@ -136,6 +147,34 @@ public class LoginActivity extends AppCompatActivity {
             progressView.setVisibility(show ? View.VISIBLE : View.GONE);
             loginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
+    }
+
+    private void attemptAuthentication(String username, String password) {
+        AuthenticationService service = NetworkManager.getInstance().getRetrofit().create(AuthenticationService.class);
+        service.authenticate(username, password)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new rx.Subscriber<Void>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.e("Payne", e.getMessage());
+                        Toast.makeText(LoginActivity.this, "Error!", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onNext(Void aVoid) {
+                        navigateToHomeScreen();
+                    }
+                });
+    }
+
+    private void navigateToHomeScreen() {
+        startActivity(new Intent(this, ObjectListActivity.class));
     }
 }
 

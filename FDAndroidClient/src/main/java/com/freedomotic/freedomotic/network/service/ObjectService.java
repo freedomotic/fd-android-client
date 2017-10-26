@@ -21,12 +21,12 @@ package com.freedomotic.freedomotic.network.service;
 
 import com.freedomotic.freedomotic.model.FDObject;
 
-import retrofit.http.GET;
+import retrofit2.http.GET;
 
 /**
  * Retrofit Api to access the rest resources
  */
 public interface ObjectService {
-    @GET("/objects")
+    @GET("objects")
     FDObject.List FDObjects();
 }

@@ -17,29 +17,15 @@
  * <http://www.gnu.org/licenses/>.
  */
 
-package com.freedomotic.freedomotic.activity;
+package com.freedomotic.freedomotic.network.service;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.POST;
+import rx.Observable;
 
-/**
- * Base activity to provide the common structure for all activities
- */
-public abstract class BaseActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
+public interface AuthenticationService {
+    @POST("users/_/login")
+    @FormUrlEncoded
+    Observable<Void> authenticate(@Field("name") String username, @Field("password") String password);
 }

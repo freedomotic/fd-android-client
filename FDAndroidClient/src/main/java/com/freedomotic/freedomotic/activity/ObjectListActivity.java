@@ -25,7 +25,7 @@ import android.os.Bundle;
 import com.freedomotic.freedomotic.fragment.ObjectDetailFragment;
 import com.freedomotic.freedomotic.fragment.ObjectListFragment;
 import com.freedomotic.freedomotic.R;
-import com.freedomotic.freedomotic.model.FDObjectModelHelper;
+
 
 
 /**
@@ -79,12 +79,10 @@ public class ObjectListActivity extends BaseActivity
     @Override
     protected void onStart() {
         super.onStart();
-        FDObjectModelHelper.getInstance().Start(this);
     }
 
     @Override
     protected void onStop() {
-        FDObjectModelHelper.getInstance().Stop();
         super.onStop();
     }
 

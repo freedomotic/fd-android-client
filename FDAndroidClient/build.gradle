@@ -45,6 +45,8 @@ android {
 
 ext.supportVersion = "26.0.2"
 ext.butterKnifeVersion = "8.8.1"
+ext.retrofitVersion = "2.3.0"
+ext.retrofitRxAdapterVersion = "1.0.0"
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -53,11 +55,11 @@ dependencies {
     compile "com.android.support:support-v4:$supportVersion"
     compile "com.jakewharton:butterknife:$butterKnifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
-    compile 'com.squareup.retrofit:retrofit:1.6.1'
-    compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
-    compile 'com.squareup.okhttp:okhttp:2.0.0'
-    compile 'com.octo.android.robospice:robospice:1.4.12'
-    compile 'com.octo.android.robospice:robospice-retrofit:1.4.12'
+    compile "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    compile "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0'
+    compile group: 'io.reactivex', name: 'rxandroid', version: '1.2.1'
+
     compile 'de.greenrobot:eventbus:2.2.1'
     compile 'com.android.support:design:26.+'
 }
