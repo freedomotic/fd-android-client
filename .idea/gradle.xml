@@ -11,8 +11,8 @@
             <option value="$PROJECT_DIR$/FDAndroidClient" />
           </set>
         </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
 </project>
-

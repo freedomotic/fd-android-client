@@ -30,7 +30,6 @@ import com.freedomotic.freedomotic.R;
 import com.freedomotic.freedomotic.activity.ObjectDetailActivity;
 import com.freedomotic.freedomotic.activity.ObjectListActivity;
 import com.freedomotic.freedomotic.model.FDObject;
-import com.freedomotic.freedomotic.model.FDObjectModelHelper;
 
 /**
  * A fragment representing a single object detail screen.
@@ -62,7 +61,7 @@ public class ObjectDetailFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments().containsKey(ARG_ITEM_ID)) {
-            fdObject = FDObjectModelHelper.getInstance().getFDObjectsList().findByUUID(getArguments().getString(ARG_ITEM_ID));
+            //fdObject = FDObjectModelHelper.getInstance().getFDObjectsList().findByUUID(getArguments().getString(ARG_ITEM_ID));
         }
     }
 
