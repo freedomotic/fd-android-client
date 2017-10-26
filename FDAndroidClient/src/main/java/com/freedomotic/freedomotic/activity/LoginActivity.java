@@ -43,11 +43,8 @@ import butterknife.OnClick;
 public class LoginActivity extends AppCompatActivity {
 
     @BindView(R.id.email) AutoCompleteTextView usernameTextView;
-
     @BindView(R.id.password) EditText passwordEditText;
-
     @BindView(R.id.login_progress) View progressView;
-
     @BindView(R.id.login_form) View loginFormView;
 
     @Override

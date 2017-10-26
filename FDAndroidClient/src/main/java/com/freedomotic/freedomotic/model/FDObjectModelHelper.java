@@ -50,9 +50,7 @@ public class FDObjectModelHelper extends ModelHelper {
     }
 
     public void onEvent(FDObjectsRequestLoad event) {
-
         spiceManager.getFromCacheAndLoadFromNetworkIfExpired(objectRequest, "objects", DurationInMillis.ONE_MINUTE, new ListObjectRequestListener());
-        //spiceManager.execute(objectRequest, "objects", DurationInMillis.ONE_MINUTE, new ListObjectRequestListener());
     }
 
     public FDObject.List getFDObjectsList() {

@@ -20,7 +20,7 @@
 package com.freedomotic.freedomotic.network.request;
 
 import com.freedomotic.freedomotic.model.FDObject;
-import com.freedomotic.freedomotic.network.IFreedomoticApi;
+import com.freedomotic.freedomotic.network.service.ObjectService;
 import com.octo.android.robospice.request.retrofit.RetrofitSpiceRequest;
 
 import roboguice.util.temp.Ln;
@@ -28,15 +28,15 @@ import roboguice.util.temp.Ln;
 /**
  * Retrofit rest request to retrieve the FD objects data from the REST api
  */
-public class ObjectsRequest extends RetrofitSpiceRequest<FDObject.List, IFreedomoticApi> {
+public class ObjectsRequest extends RetrofitSpiceRequest<FDObject.List, ObjectService> {
 
     public ObjectsRequest() {
-        super(FDObject.List.class, IFreedomoticApi.class);
+        super(FDObject.List.class, ObjectService.class);
     }
 
     @Override
     public FDObject.List loadDataFromNetwork() throws Exception {
-        Ln.d("Call web service ");
+        Ln.d("Retrieving Objects from Freedomotic Web Service...");
         return getService().FDObjects();
     }
 }

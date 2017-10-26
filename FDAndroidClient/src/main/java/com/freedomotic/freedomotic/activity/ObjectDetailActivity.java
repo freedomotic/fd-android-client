@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009-2014 Freedomotic team http://freedomotic.com
+ * Copyright (c) 2009-2017 Freedomotic team http://freedomotic.com
  *
  * This file is part of Freedomotic
  *
@@ -17,11 +17,14 @@
  * <http://www.gnu.org/licenses/>.
  */
 
-package com.freedomotic.freedomotic;
+package com.freedomotic.freedomotic.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+
+import com.freedomotic.freedomotic.fragment.ObjectDetailFragment;
+import com.freedomotic.freedomotic.R;
 
 
 /**

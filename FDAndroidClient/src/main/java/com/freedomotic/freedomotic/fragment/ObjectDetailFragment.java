@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009-2014 Freedomotic team http://freedomotic.com
+ * Copyright (c) 2009-2017 Freedomotic team http://freedomotic.com
  *
  * This file is part of Freedomotic
  *
@@ -17,7 +17,7 @@
  * <http://www.gnu.org/licenses/>.
  */
 
-package com.freedomotic.freedomotic;
+package com.freedomotic.freedomotic.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -26,6 +26,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.freedomotic.freedomotic.R;
+import com.freedomotic.freedomotic.activity.ObjectDetailActivity;
+import com.freedomotic.freedomotic.activity.ObjectListActivity;
 import com.freedomotic.freedomotic.model.FDObject;
 import com.freedomotic.freedomotic.model.FDObjectModelHelper;
 

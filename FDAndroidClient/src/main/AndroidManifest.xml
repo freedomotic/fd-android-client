@@ -43,16 +43,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ObjectDetailActivity"
+            android:name=".activity.ObjectDetailActivity"
             android:label="@string/title_object_detail"
-            android:parentActivityName=".ObjectListActivity">
+            android:parentActivityName=".activity.ObjectListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ObjectListActivity" />
+                android:value=".activity.ObjectListActivity" />
         </activity>
 
         <service
-            android:name=".network.FDSpiceService"
+            android:name=".network.service.FDSpiceService"
             android:exported="false" />
 
         <activity

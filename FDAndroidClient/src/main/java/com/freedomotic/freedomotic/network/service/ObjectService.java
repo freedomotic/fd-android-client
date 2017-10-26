@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009-2014 Freedomotic team http://freedomotic.com
+ * Copyright (c) 2009-2017 Freedomotic team http://freedomotic.com
  *
  * This file is part of Freedomotic
  *
@@ -17,25 +17,16 @@
  * <http://www.gnu.org/licenses/>.
  */
 
-package com.freedomotic.freedomotic;
+package com.freedomotic.freedomotic.network.service;
 
-import android.support.v7.app.AppCompatActivity;
+import com.freedomotic.freedomotic.model.FDObject;
 
+import retrofit.http.GET;
 
 /**
- * Base activity to provide the common struture for all activities
+ * Retrofit Api to access the rest resources
  */
-public abstract class BaseActivity extends AppCompatActivity {
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
-
-
+public interface ObjectService {
+    @GET("/objects")
+    FDObject.List FDObjects();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009-2014 Freedomotic team http://freedomotic.com
+ * Copyright (c) 2009-2017 Freedomotic team http://freedomotic.com
  *
  * This file is part of Freedomotic
  *
@@ -17,11 +17,14 @@
  * <http://www.gnu.org/licenses/>.
  */
 
-package com.freedomotic.freedomotic;
+package com.freedomotic.freedomotic.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.freedomotic.freedomotic.fragment.ObjectDetailFragment;
+import com.freedomotic.freedomotic.fragment.ObjectListFragment;
+import com.freedomotic.freedomotic.R;
 import com.freedomotic.freedomotic.model.FDObjectModelHelper;
 
 
@@ -44,15 +47,11 @@ import com.freedomotic.freedomotic.model.FDObjectModelHelper;
 public class ObjectListActivity extends BaseActivity
         implements ObjectListFragment.Callbacks {
 
-
-    //protected SpiceManager spiceManager = new SpiceManager(FDSpiceService.class);
-
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
      */
     private boolean isTwoPaneDevice;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
