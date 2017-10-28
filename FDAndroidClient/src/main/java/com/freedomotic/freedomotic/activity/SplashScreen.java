@@ -41,7 +41,7 @@ public class SplashScreen extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-
+        progressBar.setVisibility(View.INVISIBLE);
         //This method to be used when no progress is to be done or splash screen is just for display purpose only
         new Handler().postDelayed(new Runnable(){
             @Override
