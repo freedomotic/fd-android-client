@@ -57,9 +57,10 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
     compile "com.squareup.retrofit2:retrofit:$retrofitVersion"
     compile "com.squareup.retrofit2:converter-gson:$retrofitVersion"
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0'
     compile group: 'io.reactivex', name: 'rxandroid', version: '1.2.1'
 
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0'
     compile 'de.greenrobot:eventbus:2.2.1'
     compile 'com.android.support:design:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
