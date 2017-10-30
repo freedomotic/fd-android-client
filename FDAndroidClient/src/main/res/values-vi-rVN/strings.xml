@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2009-2017 Freedomotic team http://freedomotic.com
+  ~
+  ~ This file is part of Freedomotic
+  ~
+  ~ This Program is free software; you can redistribute it and/or modify it under
+  ~ the terms of the GNU General Public License as published by the Free Software
+  ~ Foundation; either version 2, or (at your option) any later version.
+  ~
+  ~ This Program is distributed in the hope that it will be useful, but WITHOUT
+  ~ ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+  ~ FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+  ~ details.
+  ~
+  ~ You should have received a copy of the GNU General Public License along with
+  ~ Freedomotic; see the file COPYING. If not, see
+  ~ <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+    <string name="app_name">"Freedomotic "</string>
+    <string name="title_object_detail">Chi tiết đối tượng</string>
+    <string name="title_activity_login">Đăng nhập</string>
+    <string name="action_sign_in_short">Đăng nhập</string>
+    <string name="prompt_username">Tên đăng nhập</string>
+    <string name="prompt_password">Mật khẩu</string>
+    <string name="action_sign_in">Đăng nhập hoặc đăng ký</string>
+    <string name="error_invalid_email">Địa chỉ email này không hợp lệ</string>
+    <string name="error_invalid_password">Mật khẩu này quá ngắn</string>
+    <string name="error_incorrect_password">Mật khẩu này không chính xác</string>
+    <string name="error_field_required">Lĩnh vực này là bắt buộc</string>
+    <string name="permission_rationale">Giấy phép liên hệ là cần thiết để cung cấp sự hoàn thành email.</string>
+</resources>
