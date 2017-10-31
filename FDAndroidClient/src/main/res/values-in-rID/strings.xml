@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2009-2017 Freedomotic team http://freedomotic.com
+  ~
+  ~ This file is part of Freedomotic
+  ~
+  ~ This Program is free software; you can redistribute it and/or modify it under
+  ~ the terms of the GNU General Public License as published by the Free Software
+  ~ Foundation; either version 2, or (at your option) any later version.
+  ~
+  ~ This Program is distributed in the hope that it will be useful, but WITHOUT
+  ~ ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+  ~ FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+  ~ details.
+  ~
+  ~ You should have received a copy of the GNU General Public License along with
+  ~ Freedomotic; see the file COPYING. If not, see
+  ~ <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+
+    <string name="app_name">"Freedomotic "</string>
+    <string name="title_object_detail">Rincian obyek</string>
+    <string name="title_activity_login">Masuk</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_username">Nama pengguna</string>
+    <string name="prompt_password">Kata sandi</string>
+    <string name="action_sign_in">Masuk atau daftar</string>
+    <string name="action_sign_in_short">Masuk</string>
+    <string name="error_invalid_email">Alamat email tidak berlaku</string>
+    <string name="error_invalid_password">Kata sandi terlalu pendek</string>
+    <string name="error_incorrect_password">Kata sandi salah</string>
+    <string name="error_field_required">Bagian ini diperlukan</string>
+    <string name="permission_rationale">"Izin kontak diperlukan untuk memberikan penyelesaian email."
+    </string>
+
+</resources>
