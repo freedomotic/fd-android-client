@@ -12,7 +12,7 @@ android:
 deploy:
   provider: releases
   api_key:
-    secure: NJl6DvXpNNrN3JThyttpRj76L98/Yu6wg0mKPu+gLV7C/bgI42OoAaTANOqBAdu3g3SYgQDmeGfW+Db/NHGFetjdG9XX9WJxc7q99o2zV++P6JxRCbBsbYzKvn+y73Vbp/NmEgKjOEYr/PsuYr9mJyZA9jqXrsZJ7cTYo/07bFzoPm0l9sin21BSjMMN4nHi9yfTsCtMlcb/PaZDFn2uQucasRouYLwkG0JZNkRq7u2taH8FUHjNPix/F4I4DY+ErvjEJO98gnqYkJl04Ech0JKjtK84Fx61LOXkrm+2j/W7EG/hXI77v507kCiMmz6cJXd5ZSHn3IQjgoIFANWi6CELCBK5oDleDV3vJgWwjlUitS0xr5mwU0+p4MG31jYXvMXd9Pn+2oJ8CZVI8SrBlBFGsaODCV1pwW/quaMeQTmYfy2rwAqGRv5PnOJ6orkd9vUg3iEqGc2fdACp14ccywCotpwcBZsCKuc2XJSccWkfTXli4FZmHg1IyfG2Gy4vmm76I2uYK2lGOsYdKkNiE0CibgImcyuAfyQ3Bn7HUlvdKCUZ6tJ0hoFqYZLnBDCYTSqYaq1LuzuNNcvJcXsAZSTZH8blsbVVsZcWqcugYSCLm2QklAlw9oi8EuFv+OVgjCS3SslTewP0fxKrDtNXoMhmOa13Z85eYbLcysCue8g=
+    secure: "$GH_TOKEN"
   file_glob: true
   file: FDAndroidClient/build/outputs/apk/*
   skip_cleanup: true
