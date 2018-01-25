@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2009-2017 Freedomotic team http://freedomotic.com
+  ~
+  ~ This file is part of Freedomotic
+  ~
+  ~ This Program is free software; you can redistribute it and/or modify it under
+  ~ the terms of the GNU General Public License as published by the Free Software
+  ~ Foundation; either version 2, or (at your option) any later version.
+  ~
+  ~ This Program is distributed in the hope that it will be useful, but WITHOUT
+  ~ ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+  ~ FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+  ~ details.
+  ~
+  ~ You should have received a copy of the GNU General Public License along with
+  ~ Freedomotic; see the file COPYING. If not, see
+  ~ <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+    <string name="app_name">"Freedomotic "</string>
+    <string name="title_activity_login">registrati</string>
+    <string name="action_sign_in_short">registrati</string>
+    <string name="action_sign_in">Accedi o Registrati</string>
+    <string name="error_invalid_email">Questo indirizzo email non è valido</string>
+    <string name="error_field_required">Questo campo è obbligatorio</string>
+    <string name="error_incorrect_password">Questa password non è corretta</string>
+    <string name="error_invalid_password">Questa password è troppo breve</string>
+    <string name="prompt_username">Nome utente</string>
+    <string name="prompt_password">Parola d\'ordine</string>
+    <string name="title_object_detail">Dettaglio oggetto</string>
+    <string name="permission_rationale">Le autorizzazioni per i contatti sono necessarie per la fornitura di email completamenti.</string>
+</resources>
