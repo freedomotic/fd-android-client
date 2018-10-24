@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2009-2014 Freedomotic team http://freedomotic.com
+  ~
+  ~ This file is part of Freedomotic
+  ~
+  ~ This Program is free software; you can redistribute it and/or modify it under
+  ~ the terms of the GNU General Public License as published by the Free Software
+  ~ Foundation; either version 2, or (at your option) any later version.
+  ~
+  ~ This Program is distributed in the hope that it will be useful, but WITHOUT
+  ~ ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+  ~ FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+  ~ details.
+  ~
+  ~ You should have received a copy of the GNU General Public License along with
+  ~ Freedomotic; see the file COPYING. If not, see
+  ~ <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+
+    <string name="app_name">"Freedomotic "</string>
+    <string name="title_object_detail">Détail de l\'objet</string>
+    <string name="title_activity_login">Connection</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_username">Nom d\'utilisateur</string>
+    <string name="prompt_password">Mot de passe</string>
+    <string name="action_sign_in">Connection ou enregistrement</string>
+    <string name="action_sign_in_short">Connection</string>
+    <string name="error_invalid_email">Cette adresse courriel est invalide</string>
+    <string name="error_invalid_password">Ce mot de passe est trop court</string>
+    <string name="error_incorrect_password">Ce mot de passe est invalide</string>
+    <string name="error_field_required">Ce champ est requis</string>
+    <string name="permission_rationale">"Les permissions de contact sont requis pour la complétion de courriels."
+    </string>
+
+</resources>
